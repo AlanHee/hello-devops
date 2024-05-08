@@ -11,5 +11,4 @@
 #rsync --dry-run
 
 #apt install rsync -y
-rsync -av --progress --delete /data/data/com.termux/files/home/server root@164.155.108.126:/root/server/
-echo 'well done'
+rsync -av --progress --delete /data/data/com.termux/files/home/auth_app/ root@$REMOTE_IP:/root/auth_app/ --exclude ".dart_frog/" --exclude ".dart_tool/" --exclude "pubspec.lock"
