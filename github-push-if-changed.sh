@@ -10,8 +10,7 @@ if ! type inotifywait &>/dev/null; then
 	apt install -qyy inotify-tools
 fi
 
-# inotifywait -m -r -e modify,create,delete,move,attrib "$FOLDER_TO_MONITOR" |
-inotifywait -m -r -e modify,create,delete,move "$FOLDER_TO_MONITOR" |
+inotifywait -m -r -e modify,create,delete,move,attrib "$FOLDER_TO_MONITOR" |
 	while read directory events filename; do
 		echo "Fold $FOLDER_TO_MONITOR changed: $events $filename"
 		cd $1
